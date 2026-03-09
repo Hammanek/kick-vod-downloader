@@ -7,6 +7,8 @@ const {
     nativeTheme
 } = require('electron')
 
+const path = require('node:path')
+
 nativeTheme.themeSource = 'dark'
 
 const {
@@ -18,7 +20,7 @@ let devmode = (process.argv[2] === "dev") ? true : false
 let currentPlatform;
 
 if (process.platform === "win32") {
-    app.setAppUserModelId("Kick VOD Downloader");
+    app.setAppUserModelId("KickVODDownloader");
     currentPlatform = "win"
 } else if (process.platform === "linux") {
     currentPlatform = "linux"
@@ -29,6 +31,7 @@ if (process.platform === "win32") {
 const createWindow = async () => {
     win = new BrowserWindow({
         autoHideMenuBar: true,
+        icon: path.join(app.getAppPath(), "public/logo.png"),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
@@ -88,7 +91,7 @@ const createFFMPEGPathDialog = async () => new Promise(async (resolve, reject) =
 const createSuccessNotif = async (savePath, language) => {
     const filename = (currentPlatform === "win") ? savePath.split("\\").slice(-1)[0]
         : (currentPlatform === "linux") ? savePath.split("/").slice(-1)[0] + ".mp4"
-        : savePath.split("/").slice(-1)[0]
+            : savePath.split("/").slice(-1)[0]
     const isCz = language === "cz"
     const notif = new Notification({
         title: isCz ? "Stahování dokončeno" : "Finished Downloading",

@@ -67,7 +67,7 @@ export default function Home() {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('language')
       if (saved) return saved
-      
+
       const browserLang = navigator.language || navigator.userLanguage || ''
       if (browserLang.toLowerCase().startsWith('cs') || browserLang.toLowerCase().startsWith('sk')) {
         return 'cz'
@@ -153,7 +153,7 @@ export default function Home() {
   }
 
   const t = (key) => translations[language][key] || key
-  
+
   React.useEffect(() => {
     localStorage.setItem('language', language)
   }, [language])
@@ -365,13 +365,13 @@ export default function Home() {
     if (!dateString) return "";
     const date = new Date(dateString);
     if (isNaN(date.getTime())) return dateString; // fallback if invalid date
-    return date.toLocaleString(language === 'cz' ? 'cs-CZ' : 'en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit'
-    });
+    
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
   }
 
   const secondsToTime = (totalSeconds) => {
@@ -416,10 +416,10 @@ export default function Home() {
             let dateStr = currentVOD?.start_time ? new Date(currentVOD.start_time).toISOString().split('T')[0] : "date";
             let durationStr = "duration";
             if (!entireVOD && startVal && endVal) {
-                let diff = timeToSeconds(endVal) - timeToSeconds(startVal);
-                durationStr = secondsToTime(diff).replace(/:/g, "-");
+              let diff = timeToSeconds(endVal) - timeToSeconds(startVal);
+              durationStr = secondsToTime(diff).replace(/:/g, "-");
             } else if (currentVOD?.duration) {
-                durationStr = secondsToTime(Math.floor(currentVOD.duration / 1000)).replace(/:/g, "-");
+              durationStr = secondsToTime(Math.floor(currentVOD.duration / 1000)).replace(/:/g, "-");
             }
             return `${streamerName}_${dateStr}_${durationStr}`;
           } catch (e) {
