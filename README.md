@@ -19,6 +19,8 @@ Building upon the original foundation, this customized version introduces severa
 - **Auto-Language Detection**: The UI inherently detects your operating system language and adapts to it (currently supports English and Czech/Slovak out of the box).
 - **Quality Options**: Allows you to pick your desired streaming quality directly pulled from Kick's adaptive bitrate manifest (720p60, 1080p60, etc.).
 - **Live WebSocket Progress**: See exactly how many segments are downloaded, the estimated remaining time, and the remuxing progress in real-time.
+- **Redesigned User Interface**: A modernized, premium glassmorphism aesthetic with engaging micro-animations and seamless UX.
+- **...and many more under the hood!**
 
 ---
 
