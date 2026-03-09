@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/CrawLeyYou/kick-vod-downloader/blob/main/public/logo.png?raw=true", width="256" height="256" />
+  <img src="https://github.com/Hammanek/kick-vod-downloader/blob/main/public/logo.png?raw=true", width="256" height="256" />
 </p>
 <h1 align="center"> Kick VOD Downloader </h1>
 
@@ -20,6 +20,7 @@ Building upon the original foundation, this customized version introduces severa
 - **Quality Options**: Allows you to pick your desired streaming quality directly pulled from Kick's adaptive bitrate manifest (720p60, 1080p60, etc.).
 - **Live WebSocket Progress**: See exactly how many segments are downloaded, the estimated remaining time, and the remuxing progress in real-time.
 - **Redesigned User Interface**: A modernized, premium glassmorphism aesthetic with engaging micro-animations and seamless UX.
+- **Updated Dependencies**: All underlying libraries and components have been updated to their latest secure versions, bringing vast improvements to stability and execution speed.
 - **...and many more under the hood!**
 
 ---
