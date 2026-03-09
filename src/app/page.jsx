@@ -361,6 +361,19 @@ export default function Home() {
     return seconds
   }
 
+  const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString; // fallback if invalid date
+    return date.toLocaleString(language === 'cz' ? 'cs-CZ' : 'en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  }
+
   const secondsToTime = (totalSeconds) => {
     const hours = Math.floor(totalSeconds / 3600).toString().padStart(2, '0')
     const minutes = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0')
@@ -642,7 +655,7 @@ export default function Home() {
                         {vod.session_title}
                       </h3>
                       <p className="text-xs text-muted-foreground font-normal uppercase tracking-wider">
-                        {vod.start_time}
+                        {formatDate(vod.start_time || vod.created_at)}
                       </p>
                     </div>
 

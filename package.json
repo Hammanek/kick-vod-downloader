@@ -1,6 +1,6 @@
 {
   "name": "kick-vod-downloader",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A tool to download VODs from Kick.",
   "main": "./src/index.mjs",
   "private": true,
