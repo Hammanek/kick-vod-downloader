@@ -34,29 +34,9 @@ Behind the clean User Interface lies a powerful modern stack:
 
 ## 🚀 Usage & Installation
 
-You no longer need to download or install FFmpeg separately. It is fully integrated into the application for all platforms. Just download the installer and you are ready to archive!
+You no longer need to download or install FFmpeg separately. It is fully integrated into the application.
 
-### Windows
-Download the [latest build](https://github.com/Hammanek/kick-vod-downloader/releases/latest) `.exe` and run it.
-
-### Linux
-Download the [latest build](https://github.com/Hammanek/kick-vod-downloader/releases/latest).
- 
-**Snap**
-Since these packages are unsigned, you need to pass the `--dangerous` argument to install via snap:
-`sudo snap install --dangerous --classic "latest-build.snap"`
-
-**AppImage**
-AppImage requires FUSE to operate. Check out [this wiki](https://github.com/AppImage/AppImageKit/wiki/FUSE) on how to install FUSE for your distribution.
-
-**tar.gz**
-Simply extract the archive and start the `kick-vod-downloader` file.
-
-### MacOS
-Download the [latest build](https://github.com/Hammanek/kick-vod-downloader/releases/latest) `.dmg`.
-
-To install and use the program in MacOS you need to remove the Apple Quarantine attribute from the unsigned file. Run this in your terminal:
-`xattr -r -d com.apple.quarantine Kick.VOD.Downloader-*.dmg`
+Download the [latest build](https://github.com/Hammanek/kick-vod-downloader/releases/latest) and run it.
 
 ## 📝 License
 
